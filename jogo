@@ -1,0 +1,80 @@
+<meta charset = "UTF-8">
+
+<script>
+
+alert("Olá, caro jogador. Na UniGames você nunca sairá perdendo. Boa sorte !!! " + " Você terá que digitar 6 números, de cada vez, entre 1 e 60"); 
+
+var n1;
+var n2;
+var n3;
+var n4;
+var n5;
+var n6;
+
+n1 = parseInt(prompt("Digite a sua 1ª aposta"));
+   if(n1 >= 1 && n1 <= 60){
+}
+   else{ 
+n1 = parseInt(prompt("Digite novamente a sua 1ª aposta. " + "Número fora de intervalo (1 e 60) ou repetido"));
+   }
+n2 = parseInt(prompt("Digite a sua 2ª aposta"));
+   if(n2 >= 1 && n2 <= 60 && n2 != n1){
+   }
+   else {
+n2 = parseInt(prompt("Digite novamente a sua 2° aposta. " + "Número fora de intervalo (1 e 60) ou repetido"));
+}
+n3 = parseInt(prompt("Digite a sua 3ª aposta"));
+   if(n3 >= 1 && n3 <= 60 && n3 != n1 && n3 != n2){
+   }
+   else {
+n3 = parseInt(prompt("Digite novamente a sua 3ª aposta. " + "Número fora de intervalo (1 e 60) ou repetido"));
+}
+n4 = parseInt(prompt("Digite a sua 4ª aposta"));
+   if(n4 >= 1 && n4 <= 60 && n4 != n1 && n4 != n2 && n4 != n3){
+   }
+   else {
+n4 = parseInt(prompt("Digite novamente a sua 4ª aposta. " + "Número fora de intervalo (1 e 60) ou repetido"));
+}
+n5 = parseInt(prompt("Digite a sua 5ª aposta"));
+   if(n5 >= 1 && n5 <= 60 && n5 != n1 && n5 != n2 && n5 != n3 && n5 != n4){
+   }
+   else {
+n5 = parseInt(prompt("Digite novamente a sua 5ª aposta." + "Número fora de intervalo (1 e 60) ou repetido"));
+}
+n6 = parseInt(prompt("Digite a sua 6ª aposta"));
+   if(n6 >= 1 && n6 <= 60 && n6 != n1 && n6 != n2 && n6 != n3 && n6 != n4 && n6 != n5){
+   }
+   else {
+n6 = parseInt(prompt("Digite novamente a sua 6ª aposta. " + "Número fora de intervalo (1 e 60) ou repetido"));
+}
+
+var s1 = Math.floor((Math.random() * 60) + 1);
+var s2 = Math.floor((Math.random() * 60) + 1);
+var s3 = Math.floor((Math.random() * 60) + 1);
+var s4 = Math.floor((Math.random() * 60) + 1);
+var s5 = Math.floor((Math.random() * 60) + 1);
+var s6 = Math.floor((Math.random() * 60) + 1);
+
+var n = [n1, n2, n3, n4, n5, n6];
+n.sort(function(a, b) {
+  return a - b;
+});
+var s = [s1, s2, s3, s4, s5, s6];
+s.sort(function(a, b) {
+  return a - b;
+});
+
+acertos = n.filter((x) => s.indexOf(x) === -1);
+var acertos = [];
+  
+if(acertos == 0 || acertos == 1 || acertos == 2 || acertos == 3){
+alert("QUE PENA ;/ NÃO FOI DESSA VEZ " + " Sua aposta : " + n + " Os números do sorteio foram : " + s + "Não fique assim. Aperte em '0K' e veja o que você ganhou");
+alert("VOCÊ GANHOU 10% DE DESCONTO NA SUA PRÓXIMA APOSTA");
+}else if(acertos == 4){
+alert("DEU QUADRA" + " Sua aposta : " + n + " Os números do sorteio foram : " + s);
+}else if(acertos == 5){
+alert("DEU QUINA" + " Sua aposta : " + n + " Os números do sorteio foram : " + s);
+}else if(acertos == 6){
+alert("DEU SENA" + " Sua aposta : " + n + " Os números do sorteio foram : " + s);
+}
+</script>
